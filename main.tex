@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+% Preámbulo
+\title{Programación II: Laboratorio 3}
+\author{Diego Hernández}
+\date{9 de octubre de 2025}
+
+% Portada
+\begin{document}
+\maketitle
+\newpage
+
+% Introducción
+
+\section{Introduction}
+
+\begin{abstract} 
+\end{abstract}
+
+% Desarrollo: Sección Herencia y Polimorfismo
+
+\section{Herencia y Polimorfismo}
+\subsection{Herencia}
+
+En la POO, la herencia es el proceso mediante el cual una subclase hereda atributos y métodos de una súperclase o clase padre.
+
+\subsubsection{Herencia múltiple y MRO}
+
+\subsection{Polimorfismo}
+Relacionado al concepto de herencia, una vez heredados los métodos y atributos en la subclase, estos pueden ser sobreescritos con características que al programador le parezca pertinente redefinir para esa subclase en particular, y estos métodos y atributos podrán conservar el mismo nombre. A esto se le llama polimorfismo, ya que el método o atributo es el mismo, pero tiene un funcionamiento interno (o forma) distinto.
+Sin embargo, esto no es exclusivo de las relaciones de herencia: en el concepto de programación conocido como Duck Typing, los métodos y atributos pueden llamarse igual en clases distintas y sin relación jerárquica, y tener formas distintas, y esto aún sería polimorfismo.
+
+En resumen, el polimorfismo puede darse en todo tipo de relaciones entre clases (herencia o clases no asociadas), mientras el método o atributo se llame igual y tenga un funcionamiento distinto.
+
+% Desarrollo: Sección Clases abstractas e interfaces
+
+\section{Abstracción: Clases abstractas e Interfaces}
+La abstracción es un término de programación y POO que hace la «ocultación de la complejidad intrínseca de una aplicación al exterior, centrándose sólo en como puede ser usada, lo que se conoce como interfaz». 
+
+En Python, hay formas de materializar o escribir esta abstracción a la hora de desarrollar código orientado a objetos, diseñando clases generales de las que se desprendan clases (en este sentido, subclases) con características similares entre sí, fijando atributos y métodos que deben estar sí o sí implementadas en estas subclases, pero no se define su código. Podría decirse que son «planos de construcción» de clases.
+
+Hay dos modos principales en Python de llevar a cabo esta abstracción con clases generales: las clases abstractas y las interfaces.
+
+\subsection{Clases abstractas}
+Las clases abstractas se caracterizan porque permiten métodos concretos con código y se transfiere a las subclases; es decir, no es completamente abstracta.
+
+En Python, usan el módulo abc para obligar a implementar en las subclases los métodos que se declaran como métodos abstractos.
+
+\subsection{Interfaces}
+
+Las interfaces se diferencian de las clases abstractas en el sentido en que estas sí son completamente no implementables.
+
+En Python, se usan los Protocols del módulo typing para verificar que un objeto cumple con el diseño de la interfaz.
+
+En primer lugar, se diseña una interfaz y se le asigna un verificador.
+En segundo lugar, se crea una clase y se instancia un objeto de esa clase.
+Finalmente, se valida con una función si el objeto cumple con el diseño de la interfaz. Es decir, se valida el objeto en vez de clase, a diferencia de lo que sucedía con las clases abstractas.
+
+
+\end{document}
