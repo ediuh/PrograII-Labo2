@@ -1,8 +1,13 @@
 \documentclass[11pt]{article}
 \usepackage{graphicx} % Required for inserting images
+\usepackage{tikz}
+\usepackage{float}
 
 % Preámbulo
-\title{Programación II: Laboratorio 3}
+\title{%
+\includegraphics[width=0.4\textwidth]{logo_uct.png}\\
+\vspace{7cm}
+{\Huge Programación II: Laboratorio 2}}
 \author{Diego Hernández}
 \date{9 de octubre de 2025}
 \setlength{\parindent}{4em}  % o el valor que prefieras
@@ -17,7 +22,7 @@
 \section{Introducción}
 El siguiente informe resume contenidos introductorios a la Programación Orientada a Objetos (POO), con énfasis en el lenguaje Python.\\
 
-\noindent La Programación Orientada a Objetos (POO) «es un paradigma de programación en el que los conceptos del mundo real relevantes para nuestro problema se modelan a través de clases y objetos, y en el que nuestro programa consiste en una serie de interacciones entre estos objetos».\\
+\noindent La Programación Orientada a Objetos (POO) «es un paradigma de programación en el que los conceptos del mundo real relevantes para nuestro problema se modelan a través de clases y objetos, y en el que nuestro programa consiste en una serie de interacciones entre estos objetos».\cite{gonzalez_poo}\\
 
 % Desarrollo: Sección Herencia y Polimorfismo
 
@@ -44,17 +49,27 @@ Algo particular que ocurre con la herencia es que puede ocurrir la herencia múl
 % Desarrollo: Sección Clases abstractas e interfaces
 
 \section{Abstracción: Clases abstractas e Interfaces}
-La \textbf{abstracción} es un término de programación y POO que hace la «ocultación de la complejidad intrínseca de una aplicación al exterior, centrándose sólo en como puede ser usada, lo que se conoce como interfaz».\\
+La \textbf{abstracción} es un término de programación y POO que hace la «ocultación de la complejidad intrínseca de una aplicación al exterior, centrándose sólo en como puede ser usada, lo que se conoce como interfaz».\cite{libpython_abstraccion}\\
 
 \noindent En Python, hay formas de materializar o escribir esta abstracción a la hora de desarrollar código orientado a objetos, diseñando clases generales de las que se desprendan clases (en este sentido, subclases) con características similares entre sí, fijando atributos y métodos que deben estar sí o sí implementadas en estas subclases, pero no se define su código. Podría decirse que son «planos de construcción» de clases.\\
 
 \noindent Hay dos modos principales en Python de llevar a cabo esta abstracción con clases generales: las clases abstractas y las interfaces.
 
+\newpage
 \subsection{Clases abstractas}
 Las clases abstractas se caracterizan porque permiten métodos concretos con código y se transfiere a las subclases; es decir, no es completamente abstracta.\\
 
 \noindent En Python, usan el módulo \textit{abc} para obligar a implementar en las subclases los métodos que se declaran como métodos abstractos.
+\vspace{1cm}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{clase_abstracta.png}
+    \caption{Muestra de una clase abstracta.}
+\end{figure}
+\vspace{2cm}
+
+\newpage
 \subsection{Interfaces}
 
 Las interfaces se diferencian de las clases abstractas en el sentido en que estas sí son completamente no implementables.\\
@@ -65,7 +80,25 @@ Las interfaces se diferencian de las clases abstractas en el sentido en que esta
     \item En primer lugar, se diseña una interfaz y se le asigna un verificador.
     \item En segundo lugar, se crea una clase y se instancia un objeto de esa clase.
     \item Finalmente, se valida con una función si el objeto cumple con el diseño de la interfaz. Es decir, se valida el objeto en vez de clase, a diferencia de lo que sucedía con las clases abstractas.
-\end{itemize}
+\end{itemize}\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{interface.png}
+    \caption{Ejemplo de interfaz con \textit{Protocols}.}
+\end{figure}\\
+
+\newpage
+\renewcommand{\refname}{Bibliografía}
+\begin{thebibliography}{3}
+\bibitem{gonzalez_poo}
+González Duque, R. (2010). \textit{Python para Todos}.
+\bibitem{libpython_herencia}
+El Libro de Python (s.f.). \texit{Herencia en Python}. https://ellibrodepython.com/herencia-en-python
+\bibitem{libpython_abstraccion}
+El Libro de Python (s.f.). \texit{Abstracción en programación}.
+https://ellibrodepython.com/abstraccion-en-programacion
+\end{thebibliography}
 
 
 \end{document}
