@@ -17,7 +17,7 @@
 \section{Introducción}
 El siguiente informe resume contenidos introductorios a la Programación Orientada a Objetos (POO), con énfasis en el lenguaje Python.\\
 
-\noindent La Programación Orientada a Objetos (POO) «es un paradigma de programación en el que los conceptos del mundo real relevantes para nuestro problema se modelan a través de clases y objetos, y en el que nuestro programa consiste en una serie de interacciones entre estos objetos».
+\noindent La Programación Orientada a Objetos (POO) «es un paradigma de programación en el que los conceptos del mundo real relevantes para nuestro problema se modelan a través de clases y objetos, y en el que nuestro programa consiste en una serie de interacciones entre estos objetos».\\
 
 % Desarrollo: Sección Herencia y Polimorfismo
 
@@ -27,6 +27,11 @@ El siguiente informe resume contenidos introductorios a la Programación Orienta
 \noindent En la POO, la \textbf{herencia} es el proceso mediante el cual una subclase hereda atributos y métodos de una súperclase o clase padre.
 
 \subsubsection{Herencia múltiple y MRO}
+Algo particular que ocurre con la herencia es que puede ocurrir la herencia múltiple, es decir, que una subclase herede métodos y atributos de más de una súperclase, ya sea porque hereda de dos súperclases de igual jerarquía o porque hereda de una súperclase que a su vez hereda de una súperclase aún mayor en jerarquía.\\
+
+\noindent En dado caso, si se invoca algún método de una clase y esta no lo tiene en sí, sino que es parte de la herencia de sus súperclases, el orden en que debe recorrer las súperclases está definido por el \textbf{MRO} (\textit{Method Resolution Order}), el cual dictamina qué orden debe recorrer las clases padre para buscar los métodos solicitados.\\
+
+\noindent En el caso de Python, este lenguaje a partir de su versión 2.3 usa un MRO basado en el algoritmo \textit{C3 linearization}, el cual básicamente hace que se revisen las clases inmediatamente superiores a la subclase a la que se le pide el método, y luego seguir con las superiores de un nivel mayor. Esto difiere del MRO que usaba antiguamente algoritmo \textit{DFS}, el cual hacía que la búsqueda siempre terminara en la súperclase de mayor nivel cada vez que pudiese, lo cual generaba repeticiones innecesarias.
 
 
 \subsection{Polimorfismo}
@@ -34,7 +39,7 @@ El siguiente informe resume contenidos introductorios a la Programación Orienta
 
 \noindent Sin embargo, esto no es exclusivo de las relaciones de herencia: en el concepto de programación conocido como \textit{Duck Typing}, los métodos y atributos pueden llamarse igual en clases distintas y sin relación jerárquica, y tener formas distintas, y esto aún sería polimorfismo.\\
 
-\noindent En resumen, el polimorfismo puede darse en todo tipo de relaciones entre clases (herencia o clases no asociadas), mientras el método o atributo se llame igual y tenga un funcionamiento distinto.
+\noindent En resumen, el polimorfismo puede darse en todo tipo de relaciones entre clases (herencia o clases no asociadas), mientras el método o atributo se llame igual y tenga un funcionamiento distinto.\\
 
 % Desarrollo: Sección Clases abstractas e interfaces
 
